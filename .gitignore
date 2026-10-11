@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+.dryrun/
+.dev.vars
+__pycache__/
+.DS_Store
+out/
+sample/
+*.ndjson.gz
+*.geojson.gz
+*.parquet

@@ -1,0 +1,14 @@
+## Agent door: ask Mot Dang from Claude, Cursor or any MCP client
+Mot Dang answers the Model Context Protocol over streamable HTTP. An assistant that speaks MCP can search the directory, open a place, list what is open now, and find what is near a point, and it quotes the same records as the site.
+- Endpoint: https://motdang.net/mcp
+- Claude Code: claude mcp add --transport http motdang https://motdang.net/mcp
+- Cursor, .cursor/mcp.json: {"mcpServers": {"motdang": {"url": "https://motdang.net/mcp"}}}
+- Any other client: point it at the endpoint above. The URL is the whole configuration.
+- search_places(query, category?, province?, open_now?, limit?): words in Thai or English, ANDed.
+- semantic_search(query, limit?): a question described by meaning, bilingual.
+- get_place(id): one place by id or page slug, every field, each source with its licence.
+- near(lat, lng, radius_m?, category?, query?, open_now?, limit?): nearest first, with distanceM.
+- open_now(lat?, lng?, radius_m?, category?, province?, query?, at?): open now in Asia/Bangkok, or at a time such as "Sa 18:30". A place with no known hours is absent from the answer; it is not reported shut.
+- list_categories(): category keys, Thai and English names, counts.
+- Each answer carries the attribution line "มดแดง Mot Dang · motdang.net" and the terms address https://motdang.net/terms.html. Rows carry osmDerived, which marks OSM-derived records (ODbL 1.0).
+- The tools read the public API described above, https://motdang.net/api/v1/, and the semantic search at https://ask.motdang.net/api/search. A script or a browser can call those directly.

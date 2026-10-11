@@ -1,0 +1,25 @@
+Mot Dang open data: what each file needs
+
+Each record sits in one file by the licences of its sources. The `licences`, `attribution` and `sources` fields on every record say which source gave what.
+
+places-odbl.*
+  Contains a source that is OpenStreetMap, or a field derived from OpenStreetMap lines, and no source without a stated licence.
+  Licence: Open Database Licence 1.0, https://opendatacommons.org/licenses/odbl/1-0/
+  Credit: Contains information from OpenStreetMap, © OpenStreetMap contributors.
+  A database you publish that is built from these records is under ODbL too.
+  The records also carry fields from other sources (Overture, Thai government registers, Mot Dang's own collection); each record's `attribution` lists their credits.
+
+places-open.*
+  Every source is Mot Dang's own collection, Overture, the OCHA admin boundaries, or a Thai government register that states an open licence. No OpenStreetMap.
+  Compilation (selection, categories, labels, fields collected by Mot Dang): CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ , credit: มดแดง Mot Dang · motdang.net
+  Overture places: CDLA-Permissive-2.0, https://cdla.dev/permissive-2-0/ , credit Overture Maps Foundation.
+  Admin boundaries (amphoe, tambon): COD-AB Thailand, OCHA / Royal Thai Survey Department, CC BY-IGO.
+  Thai government registers: the licence named in the record, credit the publisher named in `credit`.
+
+places-unverified.*
+  At least one source states no licence, records none, or is a third-party page or a read made through a logged-in browser. No licence is offered for these records as a whole. They carry facts and the link to each source. Ask the source before you reuse them.
+  A record here that also has an OpenStreetMap source lists ODbL-1.0 in `licences`; that part stays under ODbL.
+
+Not in the export: photos (each carries its own credit and licence on its page), email addresses, Wikipedia extracts (CC BY-SA 4.0), free text copied from third-party pages, build bookkeeping. manifest.json counts each dropped field.
+
+Site terms: https://motdang.net/terms.html

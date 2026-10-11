@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "motdang-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "vars": {
+    "API_BASE": "https://motdang.net/api/v1",
+    "ASK_URL": "https://ask.motdang.net/api/search",
+    "MCP_HOSTS": "motdang.net"
+  },
+  "services": [{ "binding": "SITE", "service": "mot-dang-site" }],
+  "routes": [{ "pattern": "motdang.net/mcp*", "zone_name": "motdang.net" }],
+  "observability": { "enabled": true }
+}
