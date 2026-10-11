@@ -38,7 +38,7 @@ for f in "$d"/changelog-"$month".json "$d"/changelog-"$month".txt; do [ -f "$f" 
 python3 - "$d/manifest.json" "$month" > "$scratch/notes.txt" <<'PY'
 import json, sys
 m = json.load(open(sys.argv[1])); month = sys.argv[2]
-c = m["counts"]
+c = {k: v["records"] for k, v in m["tiers"].items()}
 print("Mot Dang open data, %s" % month)
 print()
 print("places-odbl: %d records, Open Database Licence 1.0, credit OpenStreetMap contributors." % c["odbl"])
