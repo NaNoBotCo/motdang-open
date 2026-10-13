@@ -4,4 +4,4 @@ mcp/ is a Cloudflare Worker that speaks the Model Context Protocol over streamab
 
 export/ reads the published places.json and api/v1/index.json and writes a monthly export: NDJSON, GeoJSON and Parquet, split into three files by licence, with a manifest, a LICENCES.txt and a changelog against the month before. The files for each month are attached to a release: https://github.com/NaNoBotCo/motdang-open/releases . The repository holds the code; the data sits in the releases. Details in export/README.txt.
 
-LICENCES.txt says what each data file is and what each source needs. Site terms: https://motdang.net/terms.html
+The code in this repository is MIT (LICENSE). LICENCES.txt says what each data file is and what each source needs. Site terms: https://motdang.net/terms.html
